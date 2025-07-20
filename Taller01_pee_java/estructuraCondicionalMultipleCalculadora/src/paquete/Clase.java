@@ -1,4 +1,6 @@
+
 package paquete;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -6,127 +8,122 @@ public class Clase {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
+        int menu = 0;
+        double num1 = 0.0, num2 = 0.0, res = 0.0;
 
-        int menu;
-        double num1, num2, res;
-        String volver;
+        System.out.println("Diseñe un algoritmo para seleccionar un menú con 10 operaciones matemáticas básicas: suma, resta, multiplicación, división, módulo, cuadrado, raíz cuadrada, potencia, porcentaje y un número aleatorio.\n");
 
-        do {
-            System.out.println("\n-------------------- Bienvenido a la Calculadora -------------------");
-            System.out.println("1. Suma");
-            System.out.println("2. Resta");
-            System.out.println("3. Multiplicación");
-            System.out.println("4. División");
-            System.out.println("5. Módulo");
-            System.out.println("6. Cuadrado");
-            System.out.println("7. Raíz Cuadrada");
-            System.out.println("8. Potencia");
-            System.out.println("9. Porcentaje");
-            System.out.println("10. Número aleatorio");
-            System.out.print("Digite una opción (1-10): ");
-            menu = sc.nextInt();
+        System.out.println("-------------------- Bienvenido a la Calculadora -------------------");
+        System.out.println("1. Suma");
+        System.out.println("2. Resta");
+        System.out.println("3. Multiplicación");
+        System.out.println("4. División");
+        System.out.println("5. Módulo");
+        System.out.println("6. Cuadrado");
+        System.out.println("7. Raíz Cuadrada");
+        System.out.println("8. Potencia");
+        System.out.println("9. Porcentaje");
+        System.out.println("10. Número aleatorio");
+        System.out.print("Digite una opción del menú: ");
+        menu = sc.nextInt();
 
-            switch (menu) {
-                case 1: // Suma
-                    System.out.print("Ingrese el primer número: ");
-                    num1 = sc.nextDouble();
-                    System.out.print("Ingrese el segundo número: ");
-                    num2 = sc.nextDouble();
-                    res = num1 + num2;
-                    System.out.println("Resultado: " + res);
-                    break;
-
-                case 2: // Resta
-                    System.out.print("Ingrese el primer número: ");
-                    num1 = sc.nextDouble();
-                    System.out.print("Ingrese el segundo número: ");
-                    num2 = sc.nextDouble();
-                    res = num1 - num2;
-                    System.out.println("Resultado: " + res);
-                    break;
-
-                case 3: // Multiplicación
-                    System.out.print("Ingrese el primer número: ");
-                    num1 = sc.nextDouble();
-                    System.out.print("Ingrese el segundo número: ");
-                    num2 = sc.nextDouble();
-                    res = num1 * num2;
-                    System.out.println("Resultado: " + res);
-                    break;
-
-                case 4: // División
-                    System.out.print("Ingrese el numerador: ");
-                    num1 = sc.nextDouble();
-                    System.out.print("Ingrese el denominador: ");
-                    num2 = sc.nextDouble();
-                    if (num2 != 0) {
-                        res = num1 / num2;
-                        System.out.println("Resultado: " + res);
-                    } else {
-                        System.out.println("Error: División entre cero.");
-                    }
-                    break;
-
-                case 5: // Módulo
-                    System.out.print("Ingrese el primer número: ");
-                    num1 = sc.nextDouble();
-                    System.out.print("Ingrese el segundo número: ");
-                    num2 = sc.nextDouble();
+        switch (menu) {
+            case 1:
+                System.out.println("\n------------------- Bienvenido a la Suma ------------------");
+                System.out.print("Digite el primer sumando: ");
+                num1 = sc.nextDouble();
+                System.out.print("Digite el segundo sumando: ");
+                num2 = sc.nextDouble();
+                res = num1 + num2;
+                System.out.println("\nEl resultado de la suma es: " + res);
+                break;
+            case 2:
+                System.out.println("\n------------------ Bienvenido a la Resta ------------------");
+                System.out.print("Digite el minuendo: ");
+                num1 = sc.nextDouble();
+                System.out.print("Digite el sustraendo: ");
+                num2 = sc.nextDouble();
+                res = num1 - num2;
+                System.out.println("\nEl resultado de la resta es: " + res);
+                break;
+            case 3:
+                System.out.println("\n-------------- Bienvenido a la Multiplicación --------------");
+                System.out.print("Digite el primer multiplicando: ");
+                num1 = sc.nextDouble();
+                System.out.print("Digite el segundo multiplicando: ");
+                num2 = sc.nextDouble();
+                res = num1 * num2;
+                System.out.println("\nEl resultado de la multiplicación es: " + res);
+                break;
+            case 4:
+                System.out.println("\n----------------- Bienvenido a la División -----------------");
+                System.out.print("Digite el dividendo: ");
+                num1 = sc.nextDouble();
+                System.out.print("Digite el divisor: ");
+                num2 = sc.nextDouble();
+                if (num2 != 0) {
+                    res = num1 / num2;
+                    System.out.println("\nEl resultado de la división es: " + res);
+                } else {
+                    System.out.println("\nImposible la división por 0");
+                }
+                break;
+            case 5:
+                System.out.println("\n---------- Bienvenido al Módulo de la División ------------");
+                System.out.print("Digite el dividendo: ");
+                num1 = sc.nextDouble();
+                System.out.print("Digite el divisor: ");
+                num2 = sc.nextDouble();
+                if (num2 != 0) {
                     res = num1 % num2;
-                    System.out.println("Resultado: " + res);
-                    break;
+                    System.out.println("\nEl módulo de la división es: " + res);
+                } else {
+                    System.out.println("\nImposible la división por 0");
+                }
+                break;
+            case 6:
+                System.out.println("\n-------------- Bienvenido al Cuadrado --------------------");
+                System.out.print("Digite la base: ");
+                num1 = sc.nextDouble();
+                res = Math.pow(num1, 2);
+                System.out.println("\nEl cuadrado de " + num1 + " es " + res);
+                break;
+            case 7:
+                System.out.println("\n----------- Bienvenido a la Raíz Cuadrada ----------------");
+                System.out.print("Digite la base: ");
+                num1 = sc.nextDouble();
+                res = Math.sqrt(num1);
+                System.out.println("\nLa raíz cuadrada de " + num1 + " es " + res);
+                break;
+            case 8:
+                System.out.println("\n-------------- Bienvenido a la Potencia ------------------");
+                System.out.print("Digite la base: ");
+                num1 = sc.nextDouble();
+                System.out.print("Digite el exponente: ");
+                num2 = sc.nextDouble();
+                res = Math.pow(num1, num2);
+                System.out.println("\nLa potencia cuya base es " + num1 + " y exponente " + num2 + " es " + res);
+                break;
+            case 9:
+                System.out.println("\n---------------- Bienvenido al Porcentaje ---------------");
+                System.out.print("Digite el número: ");
+                num1 = sc.nextDouble();
+                System.out.print("Digite el porcentaje: ");
+                num2 = sc.nextDouble();
+                res = (num1 * num2) / 100;
+                System.out.println("\nEl " + num2 + " porciento de " + num1 + " es " + res);
+                break;
+            case 10:
+                System.out.println("\n----------- Bienvenido al Número Aleatorio --------------");
+                System.out.print("Digite el número máximo de aleatoriedad: ");
+                num1 = sc.nextDouble();
+                res = rand.nextInt((int) num1) + 1;
+                System.out.println("\nEl número aleatorio entre 0 y " + num1 + " es: " + res);
+                break;
+            default:
+                System.out.println("\nLa opción no está en el menú");
+        }
 
-                case 6: // Cuadrado
-                    System.out.print("Ingrese un número: ");
-                    num1 = sc.nextDouble();
-                    res = Math.pow(num1, 2);
-                    System.out.println("Resultado: " + res);
-                    break;
-
-                case 7: // Raíz cuadrada
-                    System.out.print("Ingrese un número: ");
-                    num1 = sc.nextDouble();
-                    if (num1 >= 0) {
-                        res = Math.sqrt(num1);
-                        System.out.println("Resultado: " + res);
-                    } else {
-                        System.out.println("Error: No se puede calcular la raíz cuadrada de un número negativo.");
-                    }
-                    break;
-
-                case 8: // Potencia
-                    System.out.print("Ingrese la base: ");
-                    num1 = sc.nextDouble();
-                    System.out.print("Ingrese el exponente: ");
-                    num2 = sc.nextDouble();
-                    res = Math.pow(num1, num2);
-                    System.out.println("Resultado: " + res);
-                    break;
-
-                case 9: // Porcentaje
-                    System.out.print("Ingrese el número: ");
-                    num1 = sc.nextDouble();
-                    System.out.print("Ingrese el porcentaje: ");
-                    num2 = sc.nextDouble();
-                    res = (num1 * num2) / 100;
-                    System.out.println("Resultado: " + res);
-                    break;
-
-                case 10: // Número aleatorio
-                    res = rand.nextDouble(); // entre 0.0 y 1.0
-                    System.out.println("Número aleatorio: " + res);
-                    break;
-
-                default:
-                    System.out.println("Opción no válida.");
-                    break;
-            }
-
-            System.out.print("¿Desea volver al menú? (s/n): ");
-            volver = sc.next();
-        } while (volver.equalsIgnoreCase("s"));
-
-        sc.close();
-        System.out.println("Gracias por usar la calculadora.");
+        System.out.println();
     }
 }
